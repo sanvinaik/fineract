@@ -174,7 +174,7 @@ public class JournalEntryRunningBalanceUpdateServiceImpl implements JournalEntry
                 BigDecimal officeRunningBalance = calculateRunningBalance(entryData, officeRunningBalanceMap);
                 BigDecimal runningBalance = calculateRunningBalance(entryData, runningBalanceMap);
 
-                params.add(new Object[] { Boolean.TRUE, runningBalance, officeRunningBalance,
+                params.add(new Object[] { true, runningBalance, officeRunningBalance,
                         platformSecurityContext.authenticatedUser().getId(), DateUtils.getAuditOffsetDateTime(), entryData.getId() });
                 batchIndex++;
                 if (batchIndex == batchUpdateSize || index == entryDataList.size() - 1) {
